@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💬 AI智能沟通助手</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部标题栏 -->
+        <header class="header">
+            <h1>💬 AI智能沟通助手</h1>
+            <p>让职场沟通更优雅得体 ✨</p>
+            <div class="header-description">
+                <p>智能优化您的语言表达，让沟通更加精准有效</p>
+            </div>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 左侧控制面板 -->
+            <section class="left-panel">
+                <div class="control-card">
+                    <!-- 转换类型选择 -->
+                    <div class="converter-type">
+                        <label class="type-label">🎯 表达方式转换</label>
+                        <div class="type-options">
+                            <button class="type-btn active" data-type="direct-to-polite">
+                                <span class="type-icon">🌟</span>
+                                <span class="type-text">温和表达</span>
+                                <small>直白 → 委婉</small>
+                            </button>
+                            <button class="type-btn" data-type="polite-to-direct">
+                                <span class="type-icon">⚡</span>
+                                <span class="type-text">直接表达</span>
+                                <small>委婉 → 直白</small>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 输入文本区域 -->
+                    <div class="input-section">
+                        <label for="input-text" class="input-label">📝 请输入需要优化的文本</label>
+                        <textarea 
+                            id="input-text" 
+                            placeholder="在这里输入您的文本内容，例如：&#10;&#10;• 工作汇报中的建议&#10;• 邮件中的请求&#10;• 会议中的发言&#10;• 其他需要优化的表达..."
+                            rows="6"
+                        ></textarea>
+                    </div>
+
+                    <!-- 沟通关系选择 -->
+                    <div class="selector-group">
+                        <div class="select-item">
+                            <label for="relationship" class="select-label">👥 沟通对象</label>
+                            <select id="relationship" class="select-input">
+                                <option value="leader">👔 领导</option>
+                                <option value="colleague">🤝 同事</option>
+                                <option value="subordinate">📋 下属</option>
+                                <option value="client">💼 客户</option>
+                                <option value="supplier">🏭 供应商</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 表达风格选择 -->
+                    <div class="style-section" id="style-section">
+                        <label class="style-label">🎨 表达风格</label>
+                        <div class="style-options">
+                            <label class="style-option">
+                                <input type="radio" name="style" value="gentle" checked>
+                                <span class="style-card">
+                                    <span class="style-icon">🌸</span>
+                                    <span class="style-text">温和型</span>
+                                    <small>和蔼友好，温暖贴心</small>
+                                </span>
+                            </label>
+                            <label class="style-option">
+                                <input type="radio" name="style" value="strict">
+                                <span class="style-card">
+                                    <span class="style-icon">🎯</span>
+                                    <span class="style-text">专业型</span>
+                                    <small>严谨专业，客观理性</small>
+                                </span>
+                            </label>
+                            <label class="style-option">
+                                <input type="radio" name="style" value="neutral">
+                                <span class="style-card">
+                                    <span class="style-icon">⚖️</span>
+                                    <span class="style-text">平衡型</span>
+                                    <small>客观平衡，不偏不倚</small>
+                                </span>
+                            </label>
+                            <label class="style-option">
+                                <input type="radio" name="style" value="emotional">
+                                <span class="style-card">
+                                    <span class="style-icon">❤️</span>
+                                    <span class="style-text">情感型</span>
+                                    <small>温暖贴心，富有情感</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 转换按钮 -->
+                    <button id="convert-btn" class="convert-button">
+                        <span class="btn-icon">🚀</span>
+                        <span class="btn-text">开始优化表达</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 右侧结果面板 -->
+            <section class="right-panel">
+                <div class="result-card">
+                    <div class="result-header">
+                        <h3>✨ 优化结果</h3>
+                        <div class="result-actions">
+                            <button id="copy-btn" class="action-btn" title="复制结果">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                            <button id="clear-btn" class="action-btn" title="清空内容">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3,6 5,6 21,6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="result-content" id="result-content">
+                        <div class="empty-state">
+                            <div class="empty-icon">
+                                <div class="empty-emoji">💭</div>
+                            </div>
+                            <h4>🎯 开始使用</h4>
+                            <p>输入需要优化的文本，选择合适的沟通对象和表达风格，点击优化按钮即可获得更优雅的表达方式。</p>
+                            <div class="usage-tips">
+                                <h5>💡 使用小贴士：</h5>
+                                <ul>
+                                    <li>🌟 输入越具体，优化效果越好</li>
+                                    <li>🎯 选择准确的沟通对象很重要</li>
+                                    <li>🎨 不同风格适合不同场景</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="loading-state" id="loading-state" style="display: none;">
+                        <div class="loading-animation">
+                            <div class="loading-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <p>正在智能优化您的表达...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 底部说明 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>🤖 AI驱动 | 🔒 隐私安全 | 💫 持续优化</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

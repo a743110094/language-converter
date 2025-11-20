@@ -1,0 +1,28 @@
+{
+  "name": "language-converter",
+  "version": "1.0.0",
+  "description": "智能语言转换工具 - 直白与委婉表达互转",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
+    "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "语言转换",
+    "情商语言",
+    "表达转换",
+    "职场沟通"
+  ],
+  "author": "MiniMax Agent",
+  "license": "MIT"
+}
