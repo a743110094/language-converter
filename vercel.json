@@ -1,0 +1,1 @@
+{"version": 2, "builds": [{"src": "server/app.js", "use": "@vercel/node"}], "routes": [{"src": "/(.*)", "dest": "/server/app.js"}], "env": {"API_KEY": "@api_key", "MODEL_NAME": "@model_name", "API_BASE_URL": "@api_base_url"}}
