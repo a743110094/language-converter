@@ -5,16 +5,18 @@
   "main": "server/app.js",
   "scripts": {
     "start": "node server/app.js",
-    "dev": "nodemon server/app.js"
+    "dev": "nodemon server/app.js",
+    "build": "copyfiles -u 1 public/* dist/"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "body-parser": "^1.20.2",
     "axios": "^1.6.0",
-    "dotenv": "^16.3.1"
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
   },
-    "devDependencies": {
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
     "nodemon": "^3.0.1"
   },
   "keywords": [
