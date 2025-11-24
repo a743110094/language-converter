@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/app.js",
     "dev": "nodemon server/app.js",
-    "build": "copyfiles -u 1 public/* dist/"
+    "build": "rm -rf dist && mkdir -p dist && cp -r public/* dist/ && echo 'Build completed: All static files copied to dist/'"
   },
   "dependencies": {
     "axios": "^1.6.0",
